@@ -1,0 +1,47 @@
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(document).ready(function () {
+      $(function onProgressLoad() {
+        var itemProgress =
+          ($('.progress-wrapper').data('progress') / 100) * 100;
+        $('.progress-bar').width(itemProgress + '%');
+        console.log('ITEM PROGRESS: ', itemProgress);
+      });
+
+      $('#finishBtn').click(function () {
+        $('.progress-bar').width(100 + '%');
+        $('.progress-bar').attr('data-percentage', '100%');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="progress-wrapper container" data-progress="50">
+      <div class="progress-bar" data-percentage="50%"></div>
+    </div>
+    <div class="progress-wrapper container" data-progress="50">
+      <div class="progress-bar" data-percentage="50%"></div>
+    </div>
+    <div class="progress-wrapper container" data-progress="50">
+      <div class="progress-bar" data-percentage="50%"></div>
+    </div>
+    <div class="progress-wrapper container" data-progress="50">
+      <div class="progress-bar" data-percentage="50%"></div>
+    </div>
+    <div class="progress-wrapper container" data-progress="50">
+      <div class="progress-bar" data-percentage="50%"></div>
+    </div>
+
+    <div class="btn-container">
+      <button class="finish-btn" id="finishBtn" (onclick)="onFinish()">
+        finish
+      </button>
+    </div>
+  </div>
+</body>
